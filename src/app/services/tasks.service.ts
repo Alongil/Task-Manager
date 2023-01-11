@@ -49,7 +49,7 @@ export class TasksService {
 
 
 
-    getTaskById(id: string) {
+    getTaskById(id: string | number) {
 
         return this.http.get<Task>(`${environment.apiUrl}todos/${id}`)
     }

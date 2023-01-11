@@ -16,8 +16,8 @@
             <div *ngIf="f.title.errors.required">Title is required</div>
           </div>
         </div>
-        <!-- <div class="form-group col">
-          <label for="completed">Is Completed</label>
+        <div class="form-group col" *ngIf="!isAddMode">
+          <label for="completed">Task Completed</label>
 
           <select
             type="select"
@@ -25,8 +25,8 @@
             class="form-control custom-select"
             [ngClass]="{ 'is-invalid': submitted && f.completed.errors }"
           >
-            <option value="{{ true }}">Yes</option>
-            <option value="{{ false }}">No</option>
+            <option value="{{ 'true' }}">Yes</option>
+            <option value="{{ 'false' }}">No</option>
           </select>
 
           <div *ngIf="submitted && f.completed.errors" class="invalid-feedback">
@@ -34,7 +34,7 @@
               Is Completed is required
             </div>
           </div>
-        </div> -->
+        </div>
       </div>
       <div class="form-group">
         <button [disabled]="loading" class="btn btn-primary">

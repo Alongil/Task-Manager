@@ -11,7 +11,7 @@ import { AlertMessages } from '../../models/alert';
 @Component({ templateUrl: 'add-edit.component.html' })
 export class AddEditComponent implements OnInit {
     form: FormGroup | any;;
-    id: string = '';
+    id: string | number = '';
     isAddMode: boolean = true;
     loading = false;
     submitted = false;
@@ -31,9 +31,12 @@ export class AddEditComponent implements OnInit {
         this.isAddMode = !this.id;
         // in case user refresh inside edit/add component
         this.tasksService.tasksGlobalValue ? this.tasks = this.tasksService.tasksGlobalValue : this.getTasksFromServer();
-        this.form = this.formBuilder.group({
+        this.form = this.isAddMode ?  this.formBuilder.group({
             title: ['', Validators.required],
-        });
+        }) : this.formBuilder.group({
+            title: ['', Validators.required],
+            completed: ['', Validators.required],
+        });;
         // dont call api if id larger than 200 beacuse we will get an error
         if (+this.id > 200) {
             this.setTaskToUpdateFormValue();
@@ -110,11 +113,13 @@ export class AddEditComponent implements OnInit {
     }
 
     private setTaskToUpdate(): Task {
+
         let tempTaskToUpdate = {
             id: +this.id,
-            completed: false,
+            completed: JSON.parse(this.form.value.completed),
             title: this.form.value.title
         }
+
         return tempTaskToUpdate
 
     }
@@ -149,7 +154,12 @@ export class AddEditComponent implements OnInit {
     // updates the global tasks value with the new task value from mock server
     private handleNewTask(newTaskResponse: any,) {
         let response = JSON.parse(newTaskResponse.body)
-        let newTask = { ...response, id: newTaskResponse.id, }
+          if(newTaskResponse.id && this.tasks[0].id  > 200) {
+            newTaskResponse.id = this.tasks[0].id + 1
+        }
+       
+        let newTask = { ...response, completed: false, id: newTaskResponse.id, }
+
         this.tasks.unshift(newTask)
         this.tasksService.updateGlobalTasks(this.tasks);
         this.router.navigate(['../'], { relativeTo: this.route });
