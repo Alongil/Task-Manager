@@ -1,10 +1,9 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
 import { LoginService } from '../../services/login.service';
 import { TasksService } from '../../services/tasks.service';
 import { AlertService } from 'src/app/services/alert.service';
 import { Task } from '../../models/task';
-import { threadId } from 'worker_threads';
 
 @Component({ templateUrl: 'tasks.component.html' })
 export class TasksComponent implements OnInit {
