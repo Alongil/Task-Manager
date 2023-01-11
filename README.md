@@ -14,6 +14,7 @@ A task management application that allows users to efficiently manage their dail
 ## Disclaimers
  - Initially, the project was designed as if the API was a real server. However, as the project progressed, it became more complex to make API calls while keeping the data on the screen updated, leading to changes in the code that could have been improved.
  - As per the project instructions, there should be an option to display a limited number of tasks in the table. In this implementation, the user has the option to choose between 5, 10, or 20 tasks, however, pagination has not been implemented.
+ - The application currently does not have a strong security setup as it is developed with a mock API that does not support a secure authentication process. To ensure the protection of user data in a production environment, additional measures such as the implementation of JWT tokens and the use of a secure database would be necessary
 
 Link to the site: https://63be85e46db87e763e4e31f1--rad-zabaione-ebd31b.netlify.app/
 
