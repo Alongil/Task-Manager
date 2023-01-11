@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="form-group col" *ngIf="!isAddMode">
-          <label for="completed">Task Completed</label>
+          <label for="completed">Task Status</label>
 
           <select
             type="select"
@@ -25,8 +25,8 @@
             class="form-control custom-select"
             [ngClass]="{ 'is-invalid': submitted && f.completed.errors }"
           >
-            <option value="{{ 'true' }}">Yes</option>
-            <option value="{{ 'false' }}">No</option>
+            <option value="{{ 'true' }}">Done</option>
+            <option value="{{ 'false' }}">Open</option>
           </select>
 
           <div *ngIf="submitted && f.completed.errors" class="invalid-feedback">
