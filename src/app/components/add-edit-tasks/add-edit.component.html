@@ -1,0 +1,51 @@
+<div class="12">
+  <div class="container">
+    <h1 *ngIf="isAddMode">Add Task</h1>
+    <h1 *ngIf="!isAddMode">Edit Task</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <div class="form-group col">
+          <label for="title">Task Description</label>
+          <input
+            type="text"
+            formControlName="title"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.title.errors }"
+          />
+          <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+            <div *ngIf="f.title.errors.required">Title is required</div>
+          </div>
+        </div>
+        <!-- <div class="form-group col">
+          <label for="completed">Is Completed</label>
+
+          <select
+            type="select"
+            formControlName="completed"
+            class="form-control custom-select"
+            [ngClass]="{ 'is-invalid': submitted && f.completed.errors }"
+          >
+            <option value="{{ true }}">Yes</option>
+            <option value="{{ false }}">No</option>
+          </select>
+
+          <div *ngIf="submitted && f.completed.errors" class="invalid-feedback">
+            <div *ngIf="f.completed.errors.required">
+              Is Completed is required
+            </div>
+          </div>
+        </div> -->
+      </div>
+      <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+          <span
+            *ngIf="loading"
+            class="spinner-border spinner-border-sm mr-1"
+          ></span>
+          Save
+        </button>
+        <a routerLink="/tasks" class="btn btn-link">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
