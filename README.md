@@ -1,27 +1,20 @@
-# TaskManager
+# Task-Manager
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
+A task management application that allows users to efficiently manage their daily tasks.
 
-## Development server
+## Project Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+ - Utilizes Bootstrap for design
+ - Includes four pages: login, home, tasks, and add/edit task pages.
+ - Login page allows for user verification through a mock API.
+ - Home page greets the user.
+ - Tasks page displays all of the user's tasks, allows for task filtering by completion status, editing and deletion of tasks, and filtering the number of displayed  -     tasks per page.
+ - Add/Edit Task page presents a form for inserting and updating tasks.
 
-## Code scaffolding
+## Disclaimers
+ - Initially, the project was designed as if the API was a real server. However, as the project progressed, it became more complex to make API calls while keeping the data on the screen updated, leading to changes in the code that could have been improved.
+ - As per the project instructions, there should be an option to display a limited number of tasks in the table. In this implementation, the user has the option to choose between 5, 10, or 20 tasks, however, pagination has not been implemented.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Link to the site: https://63be85e46db87e763e4e31f1--rad-zabaione-ebd31b.netlify.app/
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Overall, the task was enjoyable and I would be happy to discuss it further in person. Thank you for the opportunity.
