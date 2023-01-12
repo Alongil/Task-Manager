@@ -29,7 +29,7 @@ export class TasksService {
     }
 
     getUserTasks(params?: string | null) {
-        let url = `${environment.apiUrl}users/${this.user?.id}/todos`;
+        let url = `${environment.apiUrl}todos?userId=${this.user?.id}`;
         if (params) {
             url += params;
         }
