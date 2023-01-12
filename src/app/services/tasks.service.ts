@@ -50,8 +50,7 @@ export class TasksService {
 
 
     getTaskById(id: string | number) {
-
-        return this.http.get<Task>(`${environment.apiUrl}todos/${id}`)
+        return this.http.get<Task[]>(`${environment.apiUrl}todos?userId=${this.user?.id}&id=${id}`)
     }
 
     updateTask(task: Task) {
