@@ -2,7 +2,7 @@ export class Alert {
     id: string | any;
     type: AlertType = AlertType.Error;
     message: string | any;
-    autoClose: boolean | any;
+    autoClose: boolean = true;
     keepAfterRouteChange: boolean | any;
     fade: boolean | any;
 

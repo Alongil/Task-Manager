@@ -61,7 +61,8 @@ export class AddEditComponent implements OnInit {
                 this.setTaskFormValue()
             },
             error: (error: any) => {
-                this.alertService.error(error);
+                this.alertService.error(error,  { keepAfterRouteChange: true });
+                this.router.navigateByUrl('/')
                 this.loading = false;
             }
         });
@@ -71,7 +72,9 @@ export class AddEditComponent implements OnInit {
         let tempTask = this.tasks.filter((task: Task) => task.id === +this.id)
         this.taskToUpdate = tempTask[0]
         if(!this.taskToUpdate) {
-           this.alertService.error(AlertMessages.ERROR_404)
+           this.alertService.error(AlertMessages.ERROR_404, { keepAfterRouteChange: true })
+           this.router.navigateByUrl('/')
+
         }
         // if using a real server, should put the server response in here
         this.form.patchValue(this.taskToUpdate)
