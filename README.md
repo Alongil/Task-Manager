@@ -16,6 +16,6 @@ A task management application that allows users to efficiently manage their dail
  - As per the project instructions, there should be an option to display a limited number of tasks in the table. In this implementation, the user has the option to choose between 5, 10, or 20 tasks, however, pagination has not been implemented.
  - The application currently does not have a strong security setup as it is developed with a mock API that does not support a secure authentication process. To ensure the protection of user data in a production environment, additional measures such as the implementation of JWT tokens and the use of a secure database would be necessary
 
-Link to the site: https://63be85e46db87e763e4e31f1--rad-zabaione-ebd31b.netlify.app/
+Link to the site: [https://63be85e46db87e763e4e31f1--rad-zabaione-ebd31b.netlify.app/](https://redzone-db.netlify.app/login)
 
 Overall, the task was enjoyable and I would be happy to discuss it further in person. Thank you for the opportunity.
